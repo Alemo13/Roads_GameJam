@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
 
+    [Header("Data")]
+    [SerializeField] private float health = 100f;
+
     [Header("Movement")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float acceleration = 0.2f;
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
         PlayerMovement();
     }
 
+    #region Movement
     private void GetInput()
     {
         moveInput = Input.GetAxis("Horizontal");
@@ -71,5 +75,11 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+    }
+    #endregion
+
+    private void Attack()
+    {
+
     }
 }
