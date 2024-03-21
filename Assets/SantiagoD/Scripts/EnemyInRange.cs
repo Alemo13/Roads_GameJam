@@ -8,7 +8,7 @@ public class EnemyInRange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision != null && collision.CompareTag("enemy"))
+        if(collision != null && collision.CompareTag("Enemy"))
         {
             enemy = collision.gameObject;
         }
@@ -16,7 +16,7 @@ public class EnemyInRange : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision != null && collision.CompareTag("enemy"))
+        if(collision != null && collision.CompareTag("Enemy"))
         {
             enemy = null;
         }
