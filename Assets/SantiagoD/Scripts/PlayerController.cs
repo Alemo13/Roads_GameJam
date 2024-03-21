@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Data")]
     [SerializeField] private float health = 100f;
+    [SerializeField] private float damageCooldown = 2f;
+    private float lastDamageTime;
     private bool isDeath = false;
 
     [Header("Movement")]
@@ -142,12 +144,17 @@ public class PlayerController : MonoBehaviour
 
     public void GetDamaged(float damage)
     {
-        health -= damage;
-
-        if(health < 0)
+        if (!isDeath && Time.time - lastDamageTime > damageCooldown)
         {
-            isDeath = true;
-            playerAnimator.SetBool("isDeath", true);
+            health -= damage;
+            Debug.Log("Vida: " + health);
+            lastDamageTime = Time.time;
+
+            if (health < 0)
+            {
+                isDeath = true;
+                playerAnimator.SetBool("isDeath", true);
+            }
         }
     }
     #endregion
