@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Data")]
     [SerializeField] private float health = 100f;
+    private bool isDeath = false;
 
     [Header("Movement")]
     [SerializeField] private float speed = 5f;
@@ -16,22 +17,40 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float velPower = 1f;
     private bool isFacingRight = true;
     private float moveInput;
+    private bool canMove = true;
 
     [Header("Jump")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float jumpForce = 5f;
 
+    [Header("Attack")]
+    [SerializeField] private EnemyInRange attackRange;
+
+    [Header("Animator")]
+    [SerializeField] private Animator playerAnimator;
+
+    [Header("Enemies")]
+    private GameObject enemyInRange;
+
     private void Update()
     {
-        GetInput();
-        FlipPlayer();
-        Jump();
+        if (!isDeath)
+        {
+            GetInput();
+            FlipPlayer();
+            Jump();
+            ChangePlayerAnimations();
+            Attack();
+        }
     }
 
     private void FixedUpdate()
     {
-        PlayerMovement();
+        if (!isDeath)
+        {
+            PlayerMovement();
+        }
     }
 
     #region Movement
@@ -42,22 +61,48 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMovement()
     {
-        float targetSpeed = moveInput * speed;
+        if(canMove) 
+        {
+            float targetSpeed = moveInput * speed;
 
-        float speedDif = targetSpeed - rb.velocity.x;
+            float speedDif = targetSpeed - rb.velocity.x;
 
-        float accelerationRatio = (Mathf.Abs(speedDif) > 0.01f) ? acceleration : decceleration;
+            float accelerationRatio = (Mathf.Abs(speedDif) > 0.01f) ? acceleration : decceleration;
 
-        float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelerationRatio, velPower) * Mathf.Sign(speedDif);
+            float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelerationRatio, velPower) * Mathf.Sign(speedDif);
 
-        rb.AddForce(movement * Vector2.right);
+            rb.AddForce(movement * Vector2.right);
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    private void ChangePlayerAnimations()
+    {
+        if (rb.velocity.magnitude > 0.1f)
+        {
+            playerAnimator.SetBool("isWalking", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("isWalking", false);
+        }
+
+        playerAnimator.SetFloat("yVelocity", rb.velocity.y);
+
+        canMove = playerAnimator.GetBool("canMove");
+
+        playerAnimator.SetBool("isGrounded", IsGrounded());
     }
 
     private void Jump()
     {
-        if(Input.GetButtonDown("Jump") && IsGrounded())
+        if(Input.GetKeyDown(KeyCode.Space) && IsGrounded() && canMove)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            playerAnimator.SetTrigger("jump");
         }
     }
     
@@ -74,12 +119,36 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        
+        return isGrounded;
     }
     #endregion
 
+    #region Actions
     private void Attack()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && IsGrounded())
+        {
+            playerAnimator.SetTrigger("hasAttacked");
 
+            if(attackRange.ReturnEnemyInRange() != null)
+            {
+                //llamar recibir daño enemigo
+            }
+            
+        }
     }
+
+    public void GetDamaged(float damage)
+    {
+        health -= damage;
+
+        if(health < 0)
+        {
+            isDeath = true;
+            playerAnimator.SetBool("isDeath", true);
+        }
+    }
+    #endregion
 }
