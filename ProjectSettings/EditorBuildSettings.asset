@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SantiagoD/Scenes/SantiagoTestScene.unity
-    guid: 56a7867c43b7f2c43b3fcd6d28cdf553
+    path: Assets/Scenes/EscenaUI.unity
+    guid: 48a8ab03ad7145842816fab0ea70309a
   - enabled: 1
-    path: Assets/SantiagoD/Scenes/SantiagoTestScene 1.unity
-    guid: 87cefd766233bed45b460084e2485d33
-  - enabled: 1
-    path: Assets/SantiagoD/Scenes/SantiagoTestScene 2.unity
-    guid: 3bc830d00729d434bb770e2a6b61c558
+    path: Assets/Felipe/Scenes/Level 1.unity
+    guid: 47d9335ac6a7f7b46b0fa01f56e07630
   m_configObjects: {}

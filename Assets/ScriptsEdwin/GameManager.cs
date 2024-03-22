@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     public void ReturnMenu(){
         pauseButton.SetActive(true);
         panelMapa.SetActive(true);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         panelPausa.SetActive(false);
         gameIsPaused=false;
         firstTimeGame = true;
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         if(firstTimeGame)
         {
             firstTimeGame = false;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
 
         }
         
