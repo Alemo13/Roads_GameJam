@@ -285,7 +285,7 @@ MonoBehaviour:
   enemy: {fileID: 11400000, guid: 053052cf50f790346b4b6cf5711116cd, type: 2}
   attackZone: {fileID: 1072896607714174739}
   cliffZone: {fileID: 6183680804842204298}
-  walkStopRate: 0.001
+  walkStopRate: 0.01
   _hasTarget: 0
 --- !u!114 &8204410918131277457
 MonoBehaviour:
@@ -299,11 +299,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720a2592da5e93a4082940c613929ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _health: 100
+  _maxHealth: 30
+  _health: 30
   _isAlive: 1
   isInvincible: 0
   invincibleTime: 0.25
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 745532258736576021}
+        m_TargetAssemblyTypeName: EnemyManager, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5222387668849663729
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5550237270077510771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.81, y: 0.1, z: 0}
+  m_LocalPosition: {x: -0.41, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -425,6 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
+  knockback: {x: -5, y: 3}
 --- !u!61 &1693597760873767000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -432,7 +448,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5550237270077510771}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

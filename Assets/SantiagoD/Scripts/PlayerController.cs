@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
+    Animator animator;
+    Damageable damageable;
 
     [Header("Data")]
     [SerializeField] private float health = 100f;
@@ -39,6 +41,12 @@ public class PlayerController : MonoBehaviour
     [Header("Enemies")]
     private GameObject enemyInRange;
 
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        damageable = GetComponent<Damageable>();
+    }
     private void Update()
     {
         if (!isDeath)
@@ -54,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isDeath)
+        if (!damageable.LockVelocity && !isDeath)
         {
             PlayerMovement();
         }
@@ -71,11 +79,8 @@ public class PlayerController : MonoBehaviour
         if(canMove) 
         {
             float targetSpeed = moveInput * speed;
-
             float speedDif = targetSpeed - rb.velocity.x;
-
             float accelerationRatio = (Mathf.Abs(speedDif) > 0.01f) ? acceleration : decceleration;
-
             float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelerationRatio, velPower) * Mathf.Sign(speedDif);
 
             rb.AddForce(movement * Vector2.right);
@@ -171,6 +176,11 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetBool("isDeath", true);
             }
         }
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
     #endregion
 }
