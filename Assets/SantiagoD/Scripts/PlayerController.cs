@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
     [Header("Animator")]
     [SerializeField] private Animator playerAnimator;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource playerMoveAudioSource;
+    [SerializeField] private AudioSource playerAttackAudioSource;
+
     [Header("Enemies")]
     private GameObject enemyInRange;
 
@@ -43,6 +47,7 @@ public class PlayerController : MonoBehaviour
             FlipPlayer();
             Jump();
             ChangePlayerAnimations();
+            ChangeSoundState();
             Attack();
         }
     }
@@ -121,9 +126,19 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
-        
-        return isGrounded;
+        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+    }
+
+    private void ChangeSoundState()
+    {
+        if(moveInput < 0f && canMove && IsGrounded() || moveInput > 0f && canMove && IsGrounded())
+        {
+            playerMoveAudioSource.enabled = true;
+        }
+        else
+        {
+            playerMoveAudioSource.enabled = false;
+        }
     }
     #endregion
 
@@ -133,8 +148,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && IsGrounded())
         {
             playerAnimator.SetTrigger("hasAttacked");
-
-            if(attackRange.ReturnEnemyInRange() != null)
+            playerAttackAudioSource.PlayOneShot(playerAttackAudioSource.clip);
+            if (attackRange.ReturnEnemyInRange() != null)
             {
                 //llamar recibir daño enemigo
             }
