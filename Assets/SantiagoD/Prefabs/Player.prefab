@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 449741355}
   - component: {fileID: 449741356}
-  - component: {fileID: 449741357}
   - component: {fileID: 544741928025440951}
   m_Layer: 9
   m_Name: AttackRange
@@ -41,7 +40,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449741354}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -60,18 +59,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3750587, y: 2.6370828}
   m_EdgeRadius: 0
---- !u!114 &449741357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449741354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c132196d9c32b044aa83bc689b4f1ebd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &544741928025440951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +185,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpForce: 9
-  attackRange: {fileID: 449741357}
+  attackRange: {fileID: 0}
   playerAnimator: {fileID: 1082111181010296847}
   playerMoveAudioSource: {fileID: 1409421047193621241}
   playerAttackAudioSource: {fileID: 6323013934948591732}
@@ -499,6 +486,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6323013933867137806
 GameObject:
   m_ObjectHideFlags: 0

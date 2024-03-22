@@ -14,6 +14,6 @@ public class CollectionablesManager : MonoBehaviour, IObserver
 
     private void OpenDoor()
     {
-        finalDoor.SetActive(false);
+        finalDoor.SetActive(true);
     }
 }

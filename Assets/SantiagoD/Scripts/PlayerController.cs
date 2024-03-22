@@ -154,10 +154,10 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetTrigger("hasAttacked");
             playerAttackAudioSource.PlayOneShot(playerAttackAudioSource.clip);
-            if (attackRange.ReturnEnemyInRange() != null)
-            {
-                //llamar recibir daño enemigo
-            }
+            //if (attackRange.ReturnEnemyInRange() != null)
+            //{
+            //    llamar recibir daño enemigo
+            //}
             
         }
     }

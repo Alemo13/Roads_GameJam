@@ -16,6 +16,7 @@ public class Damageable : MonoBehaviour
     public float invincibleTime = 0.25f;
 
     public UnityEvent<int, Vector2> damageableHit;
+    public UnityEvent<int, int> healthChanged;
     public int MaxHealth
     {
         get
@@ -36,7 +37,8 @@ public class Damageable : MonoBehaviour
         set
         {
             _health = value;
-            if(_health <= 0)
+            healthChanged?.Invoke(_health, MaxHealth);
+            if (_health <= 0)
             {
                 IsAlive = false;
             }
