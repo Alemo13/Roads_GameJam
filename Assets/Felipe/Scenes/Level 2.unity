@@ -557,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1130631929}
+      objectReference: {fileID: 0}
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EnemyDeath
@@ -675,7 +675,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -699,7 +699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363436695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27, y: -2.0199997, z: -10}
+  m_LocalPosition: {x: -27, y: -1.7199997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -802,7 +802,7 @@ PrefabInstance:
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1130631929}
+      objectReference: {fileID: 0}
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EnemyDeath
@@ -879,18 +879,18 @@ PrefabInstance:
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1975039630}
+      objectReference: {fileID: 761167854}
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CollectedItemDoor
+      value: GoodDoor
       objectReference: {fileID: 0}
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RoadsChosed, Assembly-CSharp
+      value: Portal, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -898,6 +898,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
+--- !u!114 &761167854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
+  m_PrefabInstance: {fileID: 761167853}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719608158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13bba3379800b14db84f1bb0eedc076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &882914245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6323013933634044904, guid: f65c7da5fcf4c2b40b1eed5e3fb7f93c, type: 3}
@@ -965,7 +976,7 @@ PrefabInstance:
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1130631929}
+      objectReference: {fileID: 0}
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EnemyDeath
@@ -1061,17 +1072,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be44921195b19d489a11e0b9a7c7a3d, type: 3}
---- !u!114 &1130631929 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1841889724966076455, guid: 67b5488a694e52a4aaebaa4e219e695c, type: 3}
-  m_PrefabInstance: {fileID: 1975039629}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f71ce525e8cbbb46b2fc3bb1d8805e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1210066102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1081,7 +1081,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 539334502857505113, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: m_Name
-      value: Portal
+      value: Portal Malo
       objectReference: {fileID: 0}
     - target: {fileID: 539334502857505113, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: m_IsActive
@@ -1142,18 +1142,18 @@ PrefabInstance:
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1975039630}
+      objectReference: {fileID: 1210066103}
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EnemiesDefeatedDoor
+      value: BadDoor
       objectReference: {fileID: 0}
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RoadsChosed, Assembly-CSharp
+      value: Portal, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
       propertyPath: onDoorEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1161,6 +1161,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
+--- !u!114 &1210066103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5524404366689738745, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
+  m_PrefabInstance: {fileID: 1210066102}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915506545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13bba3379800b14db84f1bb0eedc076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1231386314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1223,7 +1234,7 @@ PrefabInstance:
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1130631929}
+      objectReference: {fileID: 0}
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EnemyDeath
@@ -1345,13 +1356,82 @@ PrefabInstance:
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1130631929}
+      objectReference: {fileID: 0}
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EnemyDeath
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
+--- !u!1001 &1472487072
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1355343989573373253, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: enemiesInScene
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373253, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: onEnemiesExterminated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1915506545}
+    - target: {fileID: 1355343989573373253, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: onEnemiesExterminated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373254, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355343989573373255, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
+      propertyPath: m_Name
+      value: EnemyDefeated
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a01a8f0bd71dbd4a80a14cdb9aee209, type: 3}
 --- !u!1 &1719608158 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 539334502857505113, guid: 93eec0ac3faf35942a6094a837cd310d, type: 3}
@@ -1419,7 +1499,7 @@ PrefabInstance:
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1130631929}
+      objectReference: {fileID: 0}
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EnemyDeath
@@ -1590,17 +1670,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b5488a694e52a4aaebaa4e219e695c, type: 3}
---- !u!114 &1975039630 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1841889724966076454, guid: 67b5488a694e52a4aaebaa4e219e695c, type: 3}
-  m_PrefabInstance: {fileID: 1975039629}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edcac4887095ea647a5a1d6e66e50731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2023952239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1663,7 +1732,7 @@ PrefabInstance:
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1130631929}
+      objectReference: {fileID: 0}
     - target: {fileID: 8204410918131277457, guid: 04d9cf73569163d43a264622deb6a853, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EnemyDeath
@@ -1691,7 +1760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712550768059666277, guid: 04800620405342a46804cbdee948dd95, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0199997
+      value: -1.7199997
       objectReference: {fileID: 0}
     - target: {fileID: 712550768059666277, guid: 04800620405342a46804cbdee948dd95, type: 3}
       propertyPath: m_LocalPosition.z

@@ -12,4 +12,13 @@ public class Portal : MonoBehaviour
         if (onDoorEntered != null) {  onDoorEntered.Invoke(); }
         GameManager.Instance.NextScene();
     }
+
+    public void GoodDoor()
+    {
+        RoadsChosed.Instance.CollectedItemDoor();
+    }
+    public void BadDoor()
+    {
+        RoadsChosed.Instance.EnemiesDefeatedDoor();
+    }
 }

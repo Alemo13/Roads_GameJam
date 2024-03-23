@@ -39,7 +39,7 @@ public class RoadsChosed : MonoBehaviour
         finalDataSO.enemiesDoor = enemiesDoor;
     }
 
-    public void CheckFinal()
+    public bool CheckFinal()
     {
         itemsDoor = finalDataSO.itemsDoor;
         enemiesDoor = finalDataSO.enemiesDoor;
@@ -51,5 +51,7 @@ public class RoadsChosed : MonoBehaviour
         {
             isGoodEnding = false;
         }
+
+        return isGoodEnding;
     }
 }
