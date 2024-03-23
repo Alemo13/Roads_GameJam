@@ -5,6 +5,8 @@ public class RoadsChosed : MonoBehaviour
 {
     public static RoadsChosed Instance { get; private set; }
 
+    public FinalData_SO finalDataSO;
+
     private int itemsDoor = 0;
     private int enemiesDoor = 0;
 
@@ -25,17 +27,24 @@ public class RoadsChosed : MonoBehaviour
 
     public void CollectedItemDoor()
     {
+        itemsDoor = finalDataSO.itemsDoor;
         itemsDoor++;
+        finalDataSO.itemsDoor = itemsDoor;
     }
 
     public void EnemiesDefeatedDoor()
     {
+        enemiesDoor = finalDataSO.enemiesDoor;
         enemiesDoor++;
+        finalDataSO.enemiesDoor = enemiesDoor;
     }
 
     public void CheckFinal()
     {
-        if(itemsDoor > enemiesDoor)
+        itemsDoor = finalDataSO.itemsDoor;
+        enemiesDoor = finalDataSO.enemiesDoor;
+
+        if (itemsDoor > enemiesDoor)
         {
             isGoodEnding = true;
         }else if(itemsDoor < enemiesDoor)

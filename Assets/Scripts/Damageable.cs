@@ -17,6 +17,7 @@ public class Damageable : MonoBehaviour
 
     public UnityEvent<int, Vector2> damageableHit;
     public UnityEvent<int, int> healthChanged;
+    public UnityEvent onDeath;
     public int MaxHealth
     {
         get
@@ -40,6 +41,7 @@ public class Damageable : MonoBehaviour
             healthChanged?.Invoke(_health, MaxHealth);
             if (_health <= 0)
             {
+                onDeath?.Invoke();
                 IsAlive = false;
             }
         }

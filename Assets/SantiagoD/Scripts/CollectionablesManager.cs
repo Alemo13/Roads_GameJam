@@ -6,10 +6,20 @@ using UnityEngine.Events;
 public class CollectionablesManager : MonoBehaviour, IObserver
 {
     [SerializeField] private GameObject finalDoor;
+    [SerializeField] private int numberOfItems = 0;
 
     public void Notify()
     {
-        OpenDoor();
+        CheckAllItems();
+    }
+
+    private void CheckAllItems()
+    {
+        numberOfItems--;
+        if (numberOfItems <= 0) 
+        {
+            OpenDoor();
+        }
     }
 
     private void OpenDoor()
