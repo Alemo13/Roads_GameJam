@@ -10,11 +10,14 @@ public class GameManager : MonoBehaviour
     GameObject canvasGameplay;
     GameObject panelMisionFallida;
     GameObject panelPausa;
-    GameObject final1;
-    GameObject final2;
-    GameObject final3;
-    GameObject final4;
 
+    [Header("Final")]
+    public GameObject final1;
+    public GameObject final2;
+    public GameObject final3;
+    public GameObject final4;
+
+    [Header("Botones")]
     public GameObject pauseButton;
     public GameObject panelMapa;
     public GameObject canvaOpciones;
@@ -24,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     private int actualScene = 1;
 
+    [Header("Scriptable")]
+    public FinalData_SO finalData;
 
     private void Awake()
     {
@@ -39,12 +44,6 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        final1 = GameObject.Find("Panel Fina1");
-        final2 = GameObject.Find("Panel Fina2");
-        final3 = GameObject.Find("Panel Fina3");
-        final4 = GameObject.Find("Panel Fina4");
-
-
         panelMenu = GameObject.Find("Panel Game Menu");
         panelPausa = GameObject.Find("Panel Pausa");
         canvasGameplay = GameObject.Find("Canvas Gameplay");
@@ -58,6 +57,9 @@ public class GameManager : MonoBehaviour
         gameIsPaused = false;
         firstTimeGame = true;
         canvaOpciones.SetActive(false);
+
+        finalData.itemsDoor = 0;
+        finalData.enemiesDoor = 0;
     }
 
     private void Update()
@@ -155,15 +157,19 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 final4.SetActive(true);
+                Time.timeScale = 0;
                 break;
             case 1:
                 final3.SetActive(true);
+                Time.timeScale = 0;
                 break;
             case 2:
                 final2.SetActive(true);
+                Time.timeScale = 0;
                 break;
             case 3:
                 final1.SetActive(true);
+                Time.timeScale = 0;
                 break;
         }
 
