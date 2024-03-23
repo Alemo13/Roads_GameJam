@@ -35,6 +35,6 @@ public class ParallaxEffect : MonoBehaviour
             startPosition -= spriteWidth;
         }
 
-        transform.position = new Vector3(startPosition + deltaX, player.transform.position.y + offsetY, transform.position.z);
+        transform.position = new Vector3(startPosition + deltaX, transform.position.y, transform.position.z);
     }
 }

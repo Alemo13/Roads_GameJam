@@ -956,7 +956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxMultiplier: 1
-  offsetY: 0
+  offsetY: 1.4
 --- !u!1 &4108695786253684866
 GameObject:
   m_ObjectHideFlags: 0

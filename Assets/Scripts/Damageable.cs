@@ -24,11 +24,11 @@ public class Damageable : MonoBehaviour
         {
             return _maxHealth;
         }
-        set 
+        set
         {
-            _maxHealth = value; 
+            _maxHealth = value;
         }
-    } 
+    }
     public int Health
     {
         get
@@ -47,16 +47,17 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    public bool IsAlive { 
+    public bool IsAlive
+    {
         get
         {
             return _isAlive;
         }
-        set 
+        set
         {
             _isAlive = value;
             animator.SetBool(AnimationStrings.isAlive, value);
-        } 
+        }
     }
     public bool LockVelocity
     {
@@ -76,9 +77,9 @@ public class Damageable : MonoBehaviour
     }
     private void Update()
     {
-        if (isInvincible) 
+        if (isInvincible)
         {
-            if(timeSinceHit > invincibleTime)
+            if (timeSinceHit > invincibleTime)
             {
                 isInvincible = false;
                 timeSinceHit = 0;
@@ -89,7 +90,7 @@ public class Damageable : MonoBehaviour
 
     public bool Hit(int damage, Vector2 knocback)
     {
-        if( IsAlive && !isInvincible)
+        if (IsAlive && !isInvincible)
         {
             Health -= damage;
             isInvincible = true;

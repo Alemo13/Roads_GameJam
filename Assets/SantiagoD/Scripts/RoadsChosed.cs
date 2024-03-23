@@ -10,7 +10,7 @@ public class RoadsChosed : MonoBehaviour
     private int itemsDoor = 0;
     private int enemiesDoor = 0;
 
-    private bool isGoodEnding = false;
+    private int isGoodEnding = 0;
 
     private void Awake()
     {
@@ -39,19 +39,12 @@ public class RoadsChosed : MonoBehaviour
         finalDataSO.enemiesDoor = enemiesDoor;
     }
 
-    public bool CheckFinal()
+    public void CheckFinal()
     {
         itemsDoor = finalDataSO.itemsDoor;
         enemiesDoor = finalDataSO.enemiesDoor;
 
-        if (itemsDoor > enemiesDoor)
-        {
-            isGoodEnding = true;
-        }else if(itemsDoor < enemiesDoor)
-        {
-            isGoodEnding = false;
-        }
-
-        return isGoodEnding;
+        GameManager.Instance.FinalScene(itemsDoor);
     }
+
 }

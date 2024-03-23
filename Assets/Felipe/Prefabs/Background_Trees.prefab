@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxMultiplier: 0.9
-  offsetY: 3
+  offsetY: 2
 --- !u!1 &4105244093133348762
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxMultiplier: 0.7
-  offsetY: 3
+  offsetY: 2
 --- !u!1 &5641830789649024451
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,4 +840,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxMultiplier: 0.3
-  offsetY: 3
+  offsetY: 2

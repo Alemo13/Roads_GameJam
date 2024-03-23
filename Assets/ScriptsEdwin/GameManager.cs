@@ -5,11 +5,16 @@ using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
+
     GameObject panelMenu;
     GameObject canvasGameplay;
     GameObject panelMisionFallida;
     GameObject panelPausa;
+    GameObject final1;
+    GameObject final2;
+    GameObject final3;
+    GameObject final4;
+
     public GameObject pauseButton;
     public GameObject panelMapa;
     public GameObject canvaOpciones;
@@ -20,25 +25,33 @@ public class GameManager : MonoBehaviour
     private int actualScene = 1;
 
 
-     private void Awake() {
-        if(GameManager.Instance==null)
+    private void Awake()
+    {
+        if (GameManager.Instance == null)
         {
-             GameManager.Instance=this;
-             DontDestroyOnLoad(this.gameObject);
-        }else
+            GameManager.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
         {
             Destroy(gameObject);
         }
     }
     void Start()
     {
-        panelMenu=GameObject.Find("Panel Game Menu");
+        final1 = GameObject.Find("Panel Fina1");
+        final2 = GameObject.Find("Panel Fina2");
+        final3 = GameObject.Find("Panel Fina3");
+        final4 = GameObject.Find("Panel Fina4");
+
+
+        panelMenu = GameObject.Find("Panel Game Menu");
         panelPausa = GameObject.Find("Panel Pausa");
-        canvasGameplay=GameObject.Find("Canvas Gameplay");
+        canvasGameplay = GameObject.Find("Canvas Gameplay");
         panelMisionFallida = GameObject.Find("Panel Mision Fallida");
-        pauseButton=GameObject.Find("Boton Pausa");
-        panelMapa=GameObject.Find("Panel Mapa");
-        canvaOpciones=GameObject.Find("Panel Config");
+        pauseButton = GameObject.Find("Boton Pausa");
+        panelMapa = GameObject.Find("Panel Mapa");
+        canvaOpciones = GameObject.Find("Panel Config");
         panelMisionFallida.SetActive(false);
         canvasGameplay.SetActive(false);
         panelPausa.SetActive(false);
@@ -49,22 +62,27 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             PauseGame();
         }
+        if (!gameIsPaused && Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
     }
 
-    public void MisionFallida(){
+    public void MisionFallida()
+    {
         panelMisionFallida.SetActive(true);
     }
     public void RestarNivel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         pauseButton.SetActive(true);
-        gameIsPaused=false;
+        gameIsPaused = false;
         if (canvaOpciones != null) { canvaOpciones.SetActive(true); }
-        
+
         AudioManager.InstanceMusic.UnmuteMusic();
     }
 
@@ -72,7 +90,7 @@ public class GameManager : MonoBehaviour
     {
         gameIsPaused = !gameIsPaused;
 
-        if(gameIsPaused)
+        if (gameIsPaused)
         {
             panelPausa.SetActive(true);
             Time.timeScale = 0;
@@ -87,7 +105,8 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void ReturnMenu(){
+    public void ReturnMenu()
+    {
         Debug.Log("ReturnMenu");
 
         pauseButton.SetActive(true);
@@ -101,6 +120,8 @@ public class GameManager : MonoBehaviour
     {
         gameIsPaused = false;
         AudioManager.InstanceMusic.UnmuteMusic();
+        pauseButton.SetActive(true);
+        panelMapa.SetActive(true);
         firstTimeGame = true;
         panelPausa.SetActive(false);
         canvaOpciones.SetActive(false);
@@ -110,12 +131,12 @@ public class GameManager : MonoBehaviour
 
     public void MapConditions()
     {
-        if(firstTimeGame)
+        if (firstTimeGame)
         {
             firstTimeGame = false;
             SceneManager.LoadScene(1);
         }
-        
+
     }
     public void activateCanvaOpcyion()
     {
@@ -126,5 +147,25 @@ public class GameManager : MonoBehaviour
     {
         actualScene++;
         SceneManager.LoadScene(actualScene);
+    }
+
+    public void FinalScene(int final)
+    {
+        switch (final)
+        {
+            case 0:
+                final4.SetActive(true);
+                break;
+            case 1:
+                final3.SetActive(true);
+                break;
+            case 2:
+                final2.SetActive(true);
+                break;
+            case 3:
+                final1.SetActive(true);
+                break;
+        }
+
     }
 }
