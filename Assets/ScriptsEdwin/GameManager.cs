@@ -58,14 +58,14 @@ public class GameManager : MonoBehaviour
     public void MisionFallida(){
         panelMisionFallida.SetActive(true);
     }
-        public void RestarNivel()
+    public void RestarNivel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         pauseButton.SetActive(true);
         gameIsPaused=false;
-        canvaOpciones.SetActive(true);
+        if (canvaOpciones != null) { canvaOpciones.SetActive(true); }
+        
         AudioManager.InstanceMusic.UnmuteMusic();
-
     }
 
     public void PauseGame()
@@ -92,12 +92,19 @@ public class GameManager : MonoBehaviour
 
         pauseButton.SetActive(true);
         panelMapa.SetActive(true);
-        //SceneManager.LoadScene(0);
         panelPausa.SetActive(false);
-        gameIsPaused=false;
-        firstTimeGame = true;
         AudioManager.InstanceMusic.UnmuteMusic();
         canvaOpciones.SetActive(false);
+    }
+
+    public void ReturnMainMenu()
+    {
+        gameIsPaused = false;
+        AudioManager.InstanceMusic.UnmuteMusic();
+        firstTimeGame = true;
+        panelPausa.SetActive(false);
+        canvaOpciones.SetActive(false);
+        SceneManager.LoadScene(0);
     }
 
 
