@@ -10,5 +10,6 @@ public class Portal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (onDoorEntered != null) {  onDoorEntered.Invoke(); }
+        GameManager.Instance.NextScene();
     }
 }

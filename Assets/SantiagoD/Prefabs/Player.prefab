@@ -297,6 +297,9 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &1409421047193621241
 AudioSource:
   m_ObjectHideFlags: 0
@@ -306,7 +309,7 @@ AudioSource:
   m_GameObject: {fileID: 6323013933634044906}
   m_Enabled: 0
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -7883612800858231609, guid: 6c3e860eda1d0a94cb643b88183b0291, type: 2}
+  OutputAudioMixerGroup: {fileID: -3485702503877013991, guid: 999dbd6369bd06040b78c9c229633a9c, type: 2}
   m_audioClip: {fileID: 8300000, guid: a4f50bbf4f09b2d478dca33035904d76, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -402,7 +405,7 @@ AudioSource:
   m_GameObject: {fileID: 6323013933634044906}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -7883612800858231609, guid: 6c3e860eda1d0a94cb643b88183b0291, type: 2}
+  OutputAudioMixerGroup: {fileID: -3485702503877013991, guid: 999dbd6369bd06040b78c9c229633a9c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9a2244c5bd355f141bd051ccdcb09428, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

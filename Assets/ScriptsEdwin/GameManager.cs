@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button botonOpciones;
     public bool gameIsPaused;
     public bool firstTimeGame;
+
+    private int actualScene = 1;
 
 
      private void Awake() {
@@ -35,16 +38,22 @@ public class GameManager : MonoBehaviour
         panelMisionFallida = GameObject.Find("Panel Mision Fallida");
         pauseButton=GameObject.Find("Boton Pausa");
         panelMapa=GameObject.Find("Panel Mapa");
-        canvaOpciones=GameObject.Find("Canvas Config");
+        canvaOpciones=GameObject.Find("Panel Config");
         panelMisionFallida.SetActive(false);
         canvasGameplay.SetActive(false);
         panelPausa.SetActive(false);
         gameIsPaused = false;
         firstTimeGame = true;
         canvaOpciones.SetActive(false);
-
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            PauseGame();
+        }
+    }
 
     public void MisionFallida(){
         panelMisionFallida.SetActive(true);
@@ -79,16 +88,16 @@ public class GameManager : MonoBehaviour
 
 
     public void ReturnMenu(){
+        Debug.Log("ReturnMenu");
+
         pauseButton.SetActive(true);
         panelMapa.SetActive(true);
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
         panelPausa.SetActive(false);
         gameIsPaused=false;
         firstTimeGame = true;
         AudioManager.InstanceMusic.UnmuteMusic();
-        canvaOpciones.SetActive(true);
-        
-        
+        canvaOpciones.SetActive(false);
     }
 
 
@@ -98,7 +107,6 @@ public class GameManager : MonoBehaviour
         {
             firstTimeGame = false;
             SceneManager.LoadScene(1);
-
         }
         
     }
@@ -107,6 +115,9 @@ public class GameManager : MonoBehaviour
         canvaOpciones.SetActive(true);
     }
 
-   
-    
+    public void NextScene()
+    {
+        actualScene++;
+        SceneManager.LoadScene(actualScene);
+    }
 }
