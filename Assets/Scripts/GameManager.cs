@@ -124,8 +124,9 @@ public class GameManager : MonoBehaviour
         panelMapa.SetActive(true);
         firstTimeGame = true;
         panelPausa.SetActive(false);
-        canvaOpciones.SetActive(false);
+        canvaOpciones.SetActive(true);
         SceneManager.LoadScene(0);
+        canvaOpciones.SetActive(false);
     }
 
 
