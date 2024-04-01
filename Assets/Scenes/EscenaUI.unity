@@ -263,6 +263,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6160631008226729247, guid: 15aafc61f099252439cb97b4c63ee59b, type: 3}
   m_PrefabInstance: {fileID: 361857785175821278}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &229529658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3686474919010182878, guid: 15aafc61f099252439cb97b4c63ee59b, type: 3}
+  m_PrefabInstance: {fileID: 361857785175821278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &242908466
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,12 +297,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4e167a22abc3a49882b3a42698460c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  final1: {fileID: 229529658}
+  final2: {fileID: 1591789469}
+  final3: {fileID: 356541092}
+  final4: {fileID: 1997657344}
   pauseButton: {fileID: 1318699437}
   panelMapa: {fileID: 154886922}
   canvaOpciones: {fileID: 267249351}
   botonOpciones: {fileID: 276191752}
   gameIsPaused: 0
   firstTimeGame: 0
+  finalDataSO: {fileID: 11400000, guid: 0e044158a0c66264293c5350f8b1106b, type: 2}
 --- !u!4 &242908468
 Transform:
   m_ObjectHideFlags: 0
@@ -802,6 +812,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &356541092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1445234187837303853, guid: 15aafc61f099252439cb97b4c63ee59b, type: 3}
+  m_PrefabInstance: {fileID: 361857785175821278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &426271405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,6 +2567,11 @@ Transform:
   m_Father: {fileID: 242908468}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1591789469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6592027526097572241, guid: 15aafc61f099252439cb97b4c63ee59b, type: 3}
+  m_PrefabInstance: {fileID: 361857785175821278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1629135558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2932,6 +2952,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928628559}
   m_CullTransparentMesh: 1
+--- !u!1 &1997657344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4581194778363235158, guid: 15aafc61f099252439cb97b4c63ee59b, type: 3}
+  m_PrefabInstance: {fileID: 361857785175821278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2008401566
 GameObject:
   m_ObjectHideFlags: 0
